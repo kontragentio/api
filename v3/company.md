@@ -49,6 +49,48 @@
         name
       }
     }
+    taxation {
+      averageEmployeesNumber
+      taxSystemsApplication
+      rsmpRegistry {
+        category
+        description
+        employees
+        products {
+          code
+          name
+          innovative
+        }
+        inclusionDate
+      }
+      taxesPaid {
+        values {
+          year
+          data {
+            code
+            amount
+          }
+        }
+      }
+      taxOffenses {
+        values {
+          year
+          finesAmount
+        }
+      }
+      taxArrears {
+        values {
+          year
+          data {
+            code
+            taxAmount
+            penaltiesAmount
+            finesAmount
+            totalAmount
+          }
+        }
+      }
+    }
     authorizedCapital {
       grnDate
       amount
@@ -128,7 +170,6 @@
     }
   }
 }
-
 ```
 ## Пример ответа
 ```json
@@ -165,6 +206,82 @@
         "authority": {
           "code": "7734",
           "name": "Инспекция Федеральной налоговой службы № 34 по г.Москве"
+        }
+      },
+      "taxation": {
+        "averageEmployeesNumber": 1083,
+        "taxSystemsApplication": [
+          "OSNO"
+        ],
+        "rsmpRegistry": null,
+        "taxesPaid": {
+          "values": [
+            {
+              "year": "2017",
+              "data": [
+                {
+                  "code": "Страховые взносы на обязательное медицинское страхование работающего населения, зачисляемые в бюджет Федерального фонда обязательного медицинского страхования",
+                  "amount": 3587778165
+                },
+                {
+                  "code": "Страховые и другие взносы на обязательное пенсионное страхование, зачисляемые в Пенсионный фонд Российской Федерации",
+                  "amount": 5711289621
+                },
+                {
+                  "code": "Транспортный налог",
+                  "amount": 3682000
+                },
+                {
+                  "code": "Налог на имущество организаций",
+                  "amount": 2307490
+                },
+                {
+                  "code": "Налог на добавленную стоимость",
+                  "amount": 24939658861
+                },
+                {
+                  "code": "Налог на прибыль",
+                  "amount": 2030422248
+                }
+              ]
+            },
+            {
+              "year": "2018",
+              "data": []
+            }
+          ]
+        },
+        "taxOffenses": {
+          "values": [
+            {
+              "year": "2017",
+              "finesAmount": 0
+            },
+            {
+              "year": "2018",
+              "finesAmount": 0
+            }
+          ]
+        },
+        "taxArrears": {
+          "values": [
+            {
+              "year": "2017",
+              "data": [
+                {
+                  "code": "Налог на прибыль",
+                  "taxAmount": 607000,
+                  "penaltiesAmount": 19500,
+                  "finesAmount": 121300,
+                  "totalAmount": 747800
+                }
+              ]
+            },
+            {
+              "year": "2018",
+              "data": []
+            }
+          ]
         }
       },
       "authorizedCapital": {

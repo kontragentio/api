@@ -47,7 +47,6 @@ curl -X POST \
 * [Карточка российской организации](./v3/company.md)
 * [Карточка индивидуального предпринимателя](./v3/individual.md)
 * [Печатные формы отчетов](./v3/reports.md)
-* [Дочерние компании и филиалы](./v3/branches_and_property.md)
 * [Сертификаты и лицензии](./v3/certificates_and_licenses.md)
 * [Риски](./v3/compliance.md)
 * [Банкротства и существенные факты](./v3/fedresurs.md)
@@ -60,9 +59,8 @@ curl -X POST \
 По вопросам работы с API обращайтесь на support@kontragent.io
 
 ## Changelog
-### 23 января 2020 г.
 
-* Добавлены [Дочерние компании и филиалы](./v3/branches_and_property.md)
+### 23 января 2020 г.
 * Добавлены [Сертификаты и лицензии](./v3/certificates_and_licenses.md)
 * Добавлены [Риски](./v3/compliance.md)
 * Добавлены [Банкротства и существенные факты](./v3/fedresurs.md)

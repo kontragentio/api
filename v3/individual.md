@@ -12,27 +12,34 @@
 
 ## Пример запроса
 ```graphql
-{
-  individual(ogrnip: "304234914700470", inn: "234900794855") {
+query {individual(ogrnip: "304234914700470", inn: "234900794855") {
     ogrnip
     inn
     firstName
     middleName
     lastName
     gender
-    email
     type
     citizenship
-    registrationDate
     terminationDate
     status {
-      isLiquidated
+      currentStatus
+      futureStatus
+      reorganizationParticipants{
+        company{
+          fullName
+        }
+        futureStatus
+      }
       text
       grnDate
     }
     taxInspection {
-      code
-      name
+      grnDate
+      authority{
+        code
+        name
+      }
     }
     form {
       compact
@@ -66,7 +73,48 @@
       description
       grnDate
       isPrimary
+    }thirdParty{
+    hh{
+      openVacancies
+      updated
+      companyUrl
+      certainty
     }
+  }
+  okpo
+  personalData{
+    snils
+    birthDate
+    birthPlace
+    address
+  }
+  registration{
+    grnDate
+    typeOfCreation{
+      code
+      name
+    }
+    authority{
+      code
+      name
+    }
+  }
+  pfr{
+    regNumber
+    grnDate
+    authority{
+      code
+      name
+    	}
+  	}
+  fss{
+    regNumber
+    grnDate
+    authority{
+      code
+      name
+    	}
+  	}
   }
 }
 ```
@@ -86,6 +134,9 @@
       "citizenship": "RF_CITIZEN",
       "terminationDate": null,
       "status": {
+        "currentStatus": "ACTIVE",
+        "futureStatus": null,
+        "reorganizationParticipants": [],
         "text": null,
         "grnDate": 0
       },
@@ -102,7 +153,7 @@
         "code": "50101"
       },
       "address": {
-        "full": "Краснодарский край, р-н Славянский, г. Славянск-на-кубани",
+        "full": "Краснодарский край",
         "postalCode": null,
         "country": "Российская Федерация",
         "federalDistrict": "Южный",
@@ -112,12 +163,8 @@
           "name": "Краснодарский",
           "type": "край"
         },
-        "city": {
-          "full": "г. Славянск-на-кубани",
-          "name": "Славянск-на-кубани",
-          "type": "г."
-        },
-        "area": "р-н Славянский",
+        "city": null,
+        "area": null,
         "street": null,
         "house": null,
         "housing": null,
@@ -172,7 +219,34 @@
           "grnDate": 1085529600,
           "isPrimary": false
         }
-      ]
+      ],
+      "thirdParty": {
+        "hh": null
+      },
+      "okpo": null,
+      "personalData": {
+        "snils": null,
+        "birthDate": null,
+        "birthPlace": null,
+        "address": null
+      },
+      "registration": {
+        "grnDate": 1085529600,
+        "typeOfCreation": null,
+        "authority": {
+          "code": "2375",
+          "name": "Межрайонная инспекция Федеральной налоговой службы № 16 по Краснодарскому краю"
+        }
+      },
+      "pfr": {
+        "regNumber": "033010011209",
+        "grnDate": 1263945600,
+        "authority": {
+          "code": "033010",
+          "name": "Управление Пенсионного фонда РФ в г.Славянске-на-Кубани Краснодарского края"
+        }
+      },
+      "fss": null
     }
   }
 }
